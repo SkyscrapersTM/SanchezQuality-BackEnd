@@ -8,6 +8,11 @@ public class BusquedadProductoDTO {
 	private Integer cantidadHasta;
 	private Double precioDesde;
 	private Double precioHasta;
+	// Pageable
+	private Integer page;
+	private Integer size;
+	private String order;
+	private boolean asc;
 
 	public String getMarca() {
 		return marca;
@@ -55,6 +60,38 @@ public class BusquedadProductoDTO {
 
 	public void setPrecioHasta(Double precioHasta) {
 		this.precioHasta = precioHasta;
+	}
+
+	public Integer getPage() {
+		return page;
+	}
+
+	public void setPage(Integer page) {
+		this.page = page;
+	}
+
+	public Integer getSize() {
+		return size;
+	}
+
+	public void setSize(Integer size) {
+		this.size = size;
+	}
+
+	public String getOrder() {
+		return order;
+	}
+
+	public void setOrder(String order) {
+		this.order = order;
+	}
+
+	public boolean isAsc() {
+		return asc;
+	}
+
+	public void setAsc(boolean asc) {
+		this.asc = asc;
 	}
 
 }
