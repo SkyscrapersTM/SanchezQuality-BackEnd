@@ -1,5 +1,7 @@
 package com.sanchezquality.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -22,6 +24,31 @@ public class ProductoService extends QueryService<Producto> {
 	@Autowired
 	ProductoRepository productoRepository;
 
+	public Optional<Producto> getOne(int id) {
+		return productoRepository.findById(id);
+	}
+
+	public Optional<Producto> getByDescripcion(String descripcion) {
+		return productoRepository.findByDescripcion(descripcion);
+	}
+
+	public void save(Producto producto) {
+		productoRepository.save(producto);
+	}
+
+	public void delete(int id) {
+		productoRepository.deleteById(id);
+	}
+
+	public boolean existsById(int id) {
+		return productoRepository.existsById(id);
+	}
+
+	public boolean existsByDescripcion(String descripcion) {
+		return productoRepository.existsByDescripcion(descripcion);
+	}
+
+	// Find all + dynamic queries
 	public Page<Producto> findByCriteria(ProductoCriteria productoCriteria, Pageable pageable) {
 		final Specification<Producto> specification = createSpecification(productoCriteria);
 		Page<Producto> productos = productoRepository.findAll(specification, pageable);

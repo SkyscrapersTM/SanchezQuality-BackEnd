@@ -17,6 +17,7 @@ public class Producto {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String descripcion;
+	@Min(0)
 	private int cantidad;
 	@Min(0)
 	private double precio;

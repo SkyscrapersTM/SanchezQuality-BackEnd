@@ -15,7 +15,7 @@ import com.sanchezquality.service.MarcaService;
 
 @RestController
 @RequestMapping("/marca")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class MarcaController {
 
 	@Autowired
