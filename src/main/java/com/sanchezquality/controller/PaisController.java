@@ -10,19 +10,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sanchezquality.entity.Marca;
-import com.sanchezquality.service.MarcaService;
+import com.sanchezquality.entity.Pais;
+import com.sanchezquality.service.PaisService;
 
 @RestController
-@RequestMapping("/marca")
+@RequestMapping("/pais")
 @CrossOrigin(origins = "*")
-public class MarcaController {
+public class PaisController {
 	@Autowired
-	MarcaService marcaService;
+	PaisService paisService;
 
 	@GetMapping("/list")
-	public ResponseEntity<List<Marca>> list() {
-		List<Marca> list = marcaService.findAll();
-		return new ResponseEntity<List<Marca>>(list, HttpStatus.OK);
+	public ResponseEntity<List<Pais>> list() {
+		List<Pais> list = paisService.findAll();
+		return new ResponseEntity<List<Pais>>(list, HttpStatus.OK);
 	}
 }

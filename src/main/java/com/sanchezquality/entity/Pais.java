@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
 
 @Entity
-public class Marca {
+public class Pais {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -23,21 +23,16 @@ public class Marca {
 	@Column(unique = true)
 	private String nombre;
 	
-	@OneToMany(mappedBy = "marca")
-	@JsonIgnore
-	private Set<Producto> producto = new HashSet<>();
-	
-	@OneToMany(mappedBy = "marca")
+	@OneToMany(mappedBy = "pais")
 	@JsonIgnore
 	private Set<Proveedor> proveedor = new HashSet<>();
 
-	public Marca(String nombre, Set<Producto> producto, Set<Proveedor> proveedor) {
+	public Pais(String nombre, Set<Proveedor> proveedor) {
 		this.nombre = nombre;
-		this.producto = producto;
 		this.proveedor = proveedor;
 	}
-
-	public Marca() {
+	
+	public Pais() {
 		
 	}
 
@@ -57,14 +52,6 @@ public class Marca {
 		this.nombre = nombre;
 	}
 
-	public Set<Producto> getProducto() {
-		return producto;
-	}
-
-	public void setProducto(Set<Producto> producto) {
-		this.producto = producto;
-	}
-	
 	public Set<Proveedor> getProveedor() {
 		return proveedor;
 	}
