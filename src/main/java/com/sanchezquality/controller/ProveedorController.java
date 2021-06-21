@@ -30,8 +30,6 @@ import com.sanchezquality.dto.ProveedorDTO;
 import com.sanchezquality.entity.Proveedor;
 import com.sanchezquality.service.ProveedorService;
 
-import io.github.jhipster.service.filter.DoubleFilter;
-import io.github.jhipster.service.filter.IntegerFilter;
 import io.github.jhipster.service.filter.StringFilter;
 
 @RestController
